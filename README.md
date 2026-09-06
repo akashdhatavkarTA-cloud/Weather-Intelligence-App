@@ -89,12 +89,14 @@ git push -u origin main
 
 Part 2: Deploying to Cloudflare Pages
 Cloudflare Pages provides fast, global hosting for Vite/React single-page applications with zero server configuration required.
+
 Step 1: Connect your GitHub Repository
 Log in to the Cloudflare Dashboard.
 In the left-hand navigation sidebar, go to Workers & Pages.
 Click Create Application > select the Pages tab > click Connect to Git.
 Select your GitHub account and choose the weather-intelligence repository you exported in Part 1.
 Click Begin setup.
+
 Step 2: Configure Build Settings
 Fill in the project configuration with the following parameters:
 Configuration Setting	Value
@@ -105,9 +107,11 @@ Build Command	npm run build
 Build Output Directory	dist
 Root Directory	(Leave empty / root)
 (Optional) Under Environment Variables, ensure NODE_VERSION is set to 18 or 20 if prompted.
+
 Step 3: Deploy
 Click Save and Deploy.
 Cloudflare will automatically clone your repository, install dependencies, run npm run build, and publish the generated assets from dist/.
 Once the build completes, Cloudflare will assign you a live production URL (e.g., https://weather-intelligence.pages.dev).
+
 Step 4: Continuous Deployment
 Every subsequent git push to your main branch will automatically trigger a new production deployment in Cloudflare Pages.
